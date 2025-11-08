@@ -15,14 +15,8 @@ phases:
     finally:
       - echo This is the finally block execution!
 artifacts:
-  base-directory: dist/my-angular-project
-  files:
-artifacts:
-  base-directory: dist/my-angular-project
-  files:
-artifacts:
-  base-directory: dist/my-angular-project
+  base-directory: dist/my-angular-project # Angular의 정확한 출력 경로
   files:
     - '**/*'                    # base-directory 안의 모든 파일을 의미
-    - appspec.yml
-    - 'deploy-scripts/**/*'
+    - appspec.yml               # CodeDeploy용 파일
+    - 'deploy-scripts/**/*'     # CodeDeploy용 스크립트 폴더
