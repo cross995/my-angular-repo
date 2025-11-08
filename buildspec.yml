@@ -1,20 +1,26 @@
 version: 0.2
+
 phases:
   install:
-    runtime-versions:
-      nodejs: 20
     commands:
+      - echo Installing Angular CLI...
       - npm install -g @angular/cli@17
+
   pre_build:
     commands:
+      - echo Installing dependencies...
       - npm install
+
   build:
     commands:
-      - ng test --no-watch --no-progress --browsers=ChromeHeadlessCI
-    finally:
-      - echo This is the finally block execution!
+      - echo Running Angular build for production...
+      - ng build --configuration production
+
+  post_build:
+    commands:
+      - echo Build phase completed successfully.
+
 artifacts:
-  base-directory: dist/my-angular-project
   files:
     - 'dist/my-angular-project/**/*'
     - appspec.yml
