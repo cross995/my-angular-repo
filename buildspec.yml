@@ -17,6 +17,12 @@ phases:
 artifacts:
   base-directory: dist/my-angular-project
   files:
-    - 'dist/my-angular-project/**/*'
+artifacts:
+  base-directory: dist/my-angular-project
+  files:
+artifacts:
+  base-directory: dist/my-angular-project
+  files:
+    - '**/*'                    # base-directory 안의 모든 파일을 의미
     - appspec.yml
     - 'deploy-scripts/**/*'
